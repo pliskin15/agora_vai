@@ -1,0 +1,74 @@
+{% extends 'model.html' %}
+{% load static %}
+
+{% block conteudo %}
+<h1>Formulário do Componente Curricular</h1>
+<div class="top-buffer">
+    <form action="{% url 'biologia' %}" method="post" >
+    {% csrf_token %}
+    <div >
+        <div>
+            <label>Foi possível realizar a coleta?</label>
+            <select name="coleta" id="coleta" required="required" onclick="testando()">
+                <option value="sim"  data-default >Sim</option>
+                <option value="nao">Não</option>
+            </select>
+        </div>
+    <br>
+        <div id="motivo" style="display:none">
+            <label>Se não foi possível, indique o motivo:</label>
+            <input type="text"  name="motivo" size="100">
+        </div>
+    <hr>
+        <label>Foi utilizada a temática Filo?</label>
+        <select name="pergunta1" id="pergunta1" required="required">
+            <option value="" data-default disabled selected></option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+    <br>
+        <label>Foi utilizada a temática Reino?</label>
+        <select name="pergunta2" id="pergunta2" required="required">
+            <option value="" data-default disabled selected></option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+    <br>
+        <label>Foi utilizada a temática Ordem?</label>
+        <select name="pergunta3" id="pergunta3" required="required">
+            <option value="" data-default disabled selected></option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+    <br>
+        <label>Foi utilizada a temática Especie?</label>
+        <select name="pergunta4" id="pergunta4" required="required">
+            <option value="" data-default disabled selected></option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+    <br>
+        <label>Foi utilizada a temática Genero?</label>
+        <select name="pergunta5" id="pergunta5" required="required">
+            <option value="" data-default disabled selected></option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+    <hr>
+    <hr>
+        Adicionar aqui o componente curricular
+    </div>
+
+     </form>
+
+      <div class="row">
+         <button class='btn btn-primary' type="submit">Salvar</button>
+         <a class="btn btn-danger" href="{% url 'inicio' %}">Cancelar</a>
+     </div>
+
+    </div>
+
+{% endblock conteudo %}
+
+{% block scripts %}
+{% endblock scripts %}
